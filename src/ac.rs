@@ -1,5 +1,3 @@
-use std::iter::FromIterator;
-
 use crate::problem::*;
 
 pub enum Revision {
@@ -54,7 +52,7 @@ pub fn ac_1<P: Problem>(problem: &mut P) -> bool {
 
 /// The AC-3 algorithm due to Mackworth 1977.
 pub fn ac_3<P: Problem>(problem: &mut P) -> bool {
-    let mut work_list = Vec::from_iter(problem.arcs());
+    let mut work_list = problem.arcs();
     let mut neighbors = vec![vec![]; problem.num_vars()];
 
     for (x, y) in problem.arcs() {
