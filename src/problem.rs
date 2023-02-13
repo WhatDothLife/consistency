@@ -5,10 +5,10 @@ pub trait Problem {
     /// Returns the number of variables in the problem.
     fn num_vars(&self) -> usize;
 
-    /// Returns a vector of the variables in the problem.
+    /// Returns the variables in the problem.
     fn variables(&self) -> Vec<X>;
 
-    /// Returns a vector of values that can be assigned to a given variable `x`.
+    /// Returns the current values that can be assigned to a given variable `x`.
     fn values(&self, x: X) -> Vec<A>;
 
     /// Removes a value `a` from the list of possible values for a given variable `x`.
